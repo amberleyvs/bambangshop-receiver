@@ -86,4 +86,8 @@ This is the place for you to write reflections:
 
 #### Reflection Subscriber-1
 
+1. We use `RwLock<Vec<Notification>>` because the notifications data can be accessed by many parts of the program at the same time. `RwLock` lets multiple parts read the data together, but only allows one part to write at a time and this makes it more efficient. `Mutex` is not used because it only allows one access at a time, even for reading, which can slow things down.
+
+2. Rust does not allow us to freely change static variables like Java because it focuses a lot on safety. Allowing that could cause problems when many parts of the program access the same data at the same time. That’s why Rust uses tools like `lazy_static` with `RwLock` or `DashMap` so shared data can still be used safely.
+
 #### Reflection Subscriber-2
