@@ -110,4 +110,8 @@ impl NotificationService {
             .join()
             .unwrap();
     }
+
+    pub fn list_messages() -> Result<Vec<String>> {
+        return Ok(NotificationRepository::list_all_as_string());
+    }
 }
