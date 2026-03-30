@@ -91,3 +91,9 @@ This is the place for you to write reflections:
 2. Rust does not allow us to freely change static variables like Java because it focuses a lot on safety. Allowing that could cause problems when many parts of the program access the same data at the same time. That’s why Rust uses tools like `lazy_static` with `RwLock` or `DashMap` so shared data can still be used safely.
 
 #### Reflection Subscriber-2
+
+1. I did explore a bit outside the tutorial, like looking at `src/lib.rs`, to understand how the app is set up. I learned how configs and shared parts of the app are used together and that helped me understand the overall flow better.
+
+2. The Observer pattern makes it easy to add more subscribers because we just need to subscribe and the system will automatically send notifications to all of them. This makes it flexible and easy to scale. But if we run more than one Main app, it becomes harder because each one has its own data and they are not shared so extra setup is needed to keep them in sync.
+
+3. I have not made my own tests or improved the Postman collection yet, but I found Postman helpful for testing APIs. It makes it easy to send requests and see results without building a frontend. I think features like saving requests and grouping them will be useful for future projects.
